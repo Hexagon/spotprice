@@ -2,9 +2,9 @@ name: Deno CI
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   test:
@@ -12,22 +12,18 @@ jobs:
 
     strategy:
       matrix:
-        deno-version: [1.20.6, "v1.x"]
-        timezone: ["America/New_York", "Europe/London", "Europe/Berlin", "America/Santiago"]
+        deno-version: [1.16.0, "v1.x"]
 
     steps:
       - name: Git Checkout Deno Module
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Use Deno Version ${{ matrix.deno-version }}
-        uses: denoland/setup-deno@v1
+        uses: denolib/setup-deno@v2
         with:
           deno-version: ${{ matrix.deno-version }}
       - name: Test Deno Formatting
-        run: deno fmt --check
+        run: deno fmt --check test/deno
       - name: Test Deno Linting
-        run: deno lint
-      - uses: szenius/set-timezone@v1.1
-        with:
-          timezoneLinux: ${{ matrix.timezone }}
+        run: deno lint test/deno
       - name: Test Deno Module
         run: deno task test

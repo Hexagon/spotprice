@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build:
@@ -16,9 +16,9 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 18.x]
+        node-version: [18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-        timezone: ["America/New_York", "Europe/London", "America/Santiago"]
+        timezone: ["Europe/London", "America/Santiago"]
 
     steps:
     - uses: actions/checkout@v3
