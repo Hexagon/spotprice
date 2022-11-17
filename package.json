@@ -1,0 +1,64 @@
+{
+  "name": "spotprice",
+  "version": "0.0.1",
+  "description": "Nordpool spot price in Node, Deno and Bun.",
+  "author": "Hexagon <github.com/hexagon>",
+  "homepage": "https://hexagon.github.io/spotprice",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hexagon/spotprice"
+  },
+  "bugs": {
+    "url": "https://github.com/hexagon/spotprice/issues"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "types/*",
+    "SECURITY.md"
+  ],
+  "keywords": [
+    "spotprice",
+    "nordpool"
+  ],
+  "scripts": {
+    "test": "uvu test test.spotprice.js",
+    "test:dist": "uvu test/node/js && npm run test:ts",
+    "test:bun": "bun wiptest test/bun",
+    "test:coverage": "c8 --include=src npm test",
+    "test:lint": "eslint ./**/*.js ./**/*.cjs",
+    "test:lint:fix": "eslint --fix  ./**/*.js ./**/*.cjs",
+    "test:ts": "tsc --strict --noEmit ./test/node/ts/basics.ts",
+    "build": "npm update && npm run build:precleanup && npm run test:lint && npm run build:typings && npm run build:dist && npm run build:minify && npm run build:cleanup && npm run test:coverage && npm run test:dist",
+    "build:ci": "npm run test:lint && npm run build:typings && npm run build:dist && npm run build:minify && npm run build:cleanup && npm run test:coverage && npm run test:dist",
+    "build:precleanup": "(rm -rf types/* || del /Q types\\*) && (rm -rf dist/* || del /Q dist\\*)",
+    "build:dist": "rollup -c ./rollup.config.js",
+    "build:minify": "uglifyjs dist/spotprice.cjs --source-map -o dist/spotprice.min.js && uglifyjs dist/spotprice.mjs --source-map -o dist/spotprice.min.mjs",
+    "build:typings": "tsc",
+    "build:cleanup": "(rm dist/spotprice.mjs || del dist\\spotprice.mjs)",
+    "build:docs": "(rm -rf docs/* || rd /S /Q docs) && jsdoc -c .jsdoc.json"
+  },
+  "type": "module",
+  "main": "./dist/spotprice.cjs",
+  "browser": "./dist/spotprice.min.js",
+  "module": "./src/spotprice.js",
+  "types": "types/spotprice.single.d.ts",
+  "exports": {
+    ".": {
+      "import": "./src/spotprice.js",
+      "require": "./dist/spotprice.cjs",
+      "browser": "./dist/spotprice.min.js"
+    }
+  },
+  "devDependencies": {
+    "c8": "^7.10.0",
+    "eslint": "^8.2.0",
+    "jsdoc": "^3.6.7",
+    "jsdoc-chameleon-template": "^1.0.2",
+    "rollup": "^2.59.0",
+    "typescript": "^4.4.4",
+    "uglify-js": "^3.14.3",
+    "uvu": "^0.5.2"
+  },
+  "license": "MIT"
+}

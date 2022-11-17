@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>
+      spotprice - Documentation
+  </title>
+
+  <link href="https://www.braintreepayments.com/images/favicon-ccda0b14.png" rel="icon" type="image/png">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link id="google-font" href="https://fonts.googleapis.com/css?family=Roboto+Mono|Cutive+Mono|Roboto:300,400,700" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="styles/highlight-themes/current.css">
+  <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+  <link type="text/css" rel="stylesheet" href="styles/collapsible.css">
+  <link type="text/css" rel="stylesheet" href="styles/style-switcher.css">
+  <link type="text/css" rel="stylesheet" href="styles/selectric.css">
+  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <script src="https://embed.runkit.com"></script>
+  <style id="style-switcher-styles">
+    nav {
+        background: #282c34;
+    }
+    .hljs {
+        background: #1d2027;
+    }
+    .nav-container > ul > li.active a {
+        color: #dcdcdc;
+    }
+    .nav-container > ul > li.active a:hover {
+        color: #f78200;
+    }
+    .nav-container > ul > li.active ul {
+        border-color: #f78200;
+    }
+    h4.name {
+        color: #f78200;
+    }
+    .params > div > code, .params > div > em {
+        color: #f78200;
+    }
+    a, a:active {
+        color: #f78200;
+    }
+    .hljs-doctag, .hljs-keyword, .hljs-formula {
+        color: #f78200;
+    }
+    nav ul a:hover, nav ul a:active {
+        color: #f78200;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header-fixed">
+      <h1>
+        <a href="index.html" title="modernTemplate.title">
+            
+                <img alt="spotprice" src="https://cdn.jsdelivr.net/gh/hexagon/spotprice@master/spotprice.png" />
+            
+            spotprice
+        </a>
+      </h1>
+      <div class="center-header">
+          <ul>
+            
+          </ul>
+      </div>
+      <div class="right-header">
+           
+                <a href="https://github.com/hexagon/spotprice" title="View it on Github" style="">
+                    <i class="fab fa-github-alt"></i>
+                </a>
+           
+                <a href="https://www.npmjs.com/package/spotprice" title="View it on NPM" style="font-size: 19px">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </a>
+           
+      </div>
+  </header>
+
+  <svg style="display: none;">
+    <defs>
+      <symbol id="linkIcon" fill="#706d77" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"/>
+          <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+  <label for="nav-trigger" class="navicon-button x">
+    <div class="navicon"></div>
+  </label>
+
+  <label for="nav-trigger" class="overlay"></label>
+
+  <nav>
+    <div id="menu-container" class="scrollbar-inner">
+        <div class="nav-container">
+            <h3 id="global-nav">Global</h3><ul><li><a href="global.html#spotprice">spotprice</a></li></ul>
+        </div>
+    </div>
+  </nav>
+
+  <div id="main">
+    
+      <h1 class="page-title">
+        Global
+      </h1>
+    
+
+    
+
+<section id="section-container">
+  <article>
+    <div class="container-overview">
+      
+        
+
+        
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+        
+      
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+      <h3 class="subsection-title">Methods</h3>
+
+      
+        
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#spotprice">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="spotprice">
+      <span class="type-signature">(async) </span>.spotprice<span class="signature">(period, requestedArea, currency, currency, endDate, urlOvverride<span class="signature-attributes">opt</span>, resultOverride<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#SpotPriceEntry">SpotPriceEntry</a>>}</span>
+    </h4>
+  </span>
+
+  
+
+
+
+  <div class="description">
+    <p>Get spot prices using supplied parameters, throws on error</p>
+  </div>
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<div class="params">
+     
+      <div>
+          
+               <code>period</code>
+               <em>(
+    <span class="param-type">
+      <a href="global.html#SpotPricePeriod">SpotPricePeriod</a>
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>Requested period</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>requestedArea</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>SE1, SE2, ...</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>currency</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>SEK, EUR, ... Throws if not supplied by service</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>currency</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>SEK, EUR, ... Throws if not supplied by service</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>endDate</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>String representing date in format YYYY-MM-DD, expected timezone is Europe/Oslo</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>urlOvverride</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+                &lt;optional><br>
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>Override default service URL, this URL is expected to contain all parameters, and will ignore previus passed parameters</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>resultOverride</code>
+               <em>(
+    <span class="param-type">
+      Object
+    </span>
+
+    
+)</em>
+          
+
+          
+            <span class="attributes">
+              
+                &lt;optional><br>
+              
+
+              
+
+              
+            </span>
+          
+
+          <p>Override fetch result with plain object</p>
+
+          
+
+      </div>
+      
+</div>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line78">line 78</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    
+
+    
+      <h3 class="subsection-title">Type Definitions</h3>
+
+      
+          
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#SpotPriceEntry">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="SpotPriceEntry">
+      <span class="type-signature"></span>.SpotPriceEntry<span class="type-signature"> :Object</span>
+    </h4>
+  </span>
+
+  
+
+
+
+
+
+
+
+
+
+  <h5>Parameters:</h5>
+  
+
+<div class="params">
+     
+      <div>
+          
+               <code>startTime</code>
+               <em>(
+    <span class="param-type">
+      Date
+    </span>
+
+    
+)</em>
+          
+
+          
+
+          
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>areaCode</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+
+          <p>SE1, SE2 ...</p>
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>spotPrice</code>
+               <em>(
+    <span class="param-type">
+      Number
+    </span>
+
+    
+)</em>
+          
+
+          
+
+          
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>unit</code>
+               <em>(
+    <span class="param-type">
+      string
+    </span>
+
+    
+)</em>
+          
+
+          
+
+          <p>EUR/MWh, SEK/MWh ...</p>
+
+          
+
+      </div>
+      
+</div>
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line33">line 33</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+          
+
+
+  
+
+  <span class='name-container'>
+    <a class="link-icon" href="#SpotPricePeriod">
+      <svg height="20" width="20" style="fill: black;">
+        <use xlink:href="#linkIcon"></use>
+      </svg>
+    </a>
+    <h4 class="name" id="SpotPricePeriod">
+      <span class="type-signature"></span>.SpotPricePeriod<span class="type-signature"> :"hourly"|"daily"|"weekly"|"monthly"|"yearly"</span>
+    </h4>
+  </span>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source">
+      <ul class="dummy">
+        <li>
+          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line29">line 29</a>
+        </li>
+      </ul>
+    </dd>
+  
+
+  
+
+  
+
+  
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    
+  </article>
+</section>
+
+
+
+
+
+  <br class="clear">
+
+  <footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.11</a>
+  </footer>
+
+    
+
+  <script src="scripts/linenumber.js"></script>
+  <script src="scripts/pagelocation.js"></script>
+  <script src="scripts/scrollbar.js"></script>
+  <script src="scripts/collapsible.js"></script>
+  <script src="scripts/jquery.selectric.min.js"></script>
+  <script src="scripts/clipboard.min.js"></script>
+
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <script>
+      $(function () {
+          $('#menu-container').scrollbar();
+
+          
+      });
+    </script>
+</body>
+</html>
