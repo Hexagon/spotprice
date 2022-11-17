@@ -6,7 +6,7 @@ NOTE: THIS IS WORK IN PROGRESS.
 
 NOTE: This works, but it is not allowed by Nordpool terms of usage to fetch data using this method. This as a proof of concept.
 
-[![Node.js CI](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml) [![Deno CI](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml) [![Bun CI](https://github.com/Hexagon/spotprice/actions/workflows/bun.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/bun.yaml)
+[![Node.js CI](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml) [![Deno CI](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml) [![Bun CI](https://github.com/Hexagon/spotprice/actions/workflows/bun.yaml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/bun.yaml)
 [![npm version](https://badge.fury.io/js/spotprice.svg)](https://badge.fury.io/js/spotprice) [![NPM Downloads](https://img.shields.io/npm/dm/spotprice.svg)](https://www.npmjs.org/package/spotprice) [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/spotprice/badge?style=rounded)](https://www.jsdelivr.com/package/npm/spotprice) 
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Hexagon/spotprice/blob/master/LICENSE) 
 
