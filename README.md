@@ -6,7 +6,7 @@ NOTE: THIS IS WORK IN PROGRESS.
 
 NOTE: This works, but it is not allowed by Nordpool terms of usage to fetch data using this method. This as a proof of concept.
 
-[![Node.js CI](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml) [![Deno CI](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml) 
+[![Node.js CI](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/node.js.yml) [![Deno CI](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/deno.yml) [![Bun CI](https://github.com/Hexagon/spotprice/actions/workflows/bun.yml/badge.svg)](https://github.com/Hexagon/spotprice/actions/workflows/bun.yaml)
 [![npm version](https://badge.fury.io/js/@hexagon%2Fspotprice.svg)](https://badge.fury.io/js/@hexagon%2Fspotprice) [![NPM Downloads](https://img.shields.io/npm/dm/spotprice.svg)](https://www.npmjs.org/package/spotprice) [![jsdelivr](https://data.jsdelivr.com/v1/package/npm/spotprice/badge?style=rounded)](https://www.jsdelivr.com/package/npm/spotprice) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/4978bdbf495941c087ecb32b120f28ff)](https://www.codacy.com/gh/Hexagon/spotprice/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Hexagon/spotprice&amp;utm_campaign=Badge_Grade)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Hexagon/spotprice/blob/master/LICENSE) 
 
