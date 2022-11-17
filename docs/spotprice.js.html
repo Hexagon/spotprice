@@ -169,7 +169,7 @@ const
 	 * @readonly
 	 * @private
 	 */
-    npBaseApiUrl = 'https://www.nordpoolgroup.com/api/marketdata/page',
+	npBaseApiUrl = "https://www.nordpoolgroup.com/api/marketdata/page",
 
 	/**
 	 * Enum for valid period values
@@ -177,13 +177,13 @@ const
 	 * @private
 	 * @enum {number}
 	 */
-    periods = {
-        hourly: 10,
-        daily: 11,
-        weekly: 12,
-        monthly: 13,
-        yearly: 14
-    };
+	periods = {
+		hourly: 10,
+		daily: 11,
+		weekly: 12,
+		monthly: 13,
+		yearly: 14
+	};
 
 /**
  * Get spot prices using supplied parameters, throws on error
@@ -209,11 +209,11 @@ async function spotprice(period, requestedArea, currency, endDate, urlOverride, 
 	} else {
 		// Construct URL with parameters for currency and endDate
 		const params = new URLSearchParams();
-		if (currency) params.append('currency',currency.trim().toUpperCase());
-		if (endDate) params.append('endDate',endDate);
+		if (currency) params.append("currency",currency.trim().toUpperCase());
+		if (endDate) params.append("endDate",endDate);
 
 		// Find periodId from period
-		let periodId = periods[period];
+		const periodId = periods[period];
 		if (!periodId) {
 			throw new Error("Invalid period, please use hourly, daily etc...");
 		}
@@ -221,7 +221,7 @@ async function spotprice(period, requestedArea, currency, endDate, urlOverride, 
 		url = `${npBaseApiUrl}/${periodId}?${params.toString()}`;
 	}
 
-    // Get data (allow to override fetch)
+	// Get data (allow to override fetch)
 	let result = resultOverride;
 	if(!resultOverride) {
 		const 
@@ -229,36 +229,36 @@ async function spotprice(period, requestedArea, currency, endDate, urlOverride, 
 		result = await fetcher.json();
 	}
 
-    // Find requested area
-    const
-        requestedEntity = result.conf.Entities.find(e => { return e.Name == requestedArea; });
-    if (!requestedEntity) {
-        throw new Error("Requested area code not found");
-    }
+	// Find requested area
+	const
+		requestedEntity = result.conf.Entities.find(e => { return e.Name == requestedArea; });
+	if (!requestedEntity) {
+		throw new Error("Requested area code not found");
+	}
 
-    // Construct a nice array of nice object
-    const 
+	// Construct a nice array of nice object
+	const 
 		/** 
 		 * @type {SpotPriceEntry[]}
 		 */
-        spotPrices = [],
-        unit = result.data.Units[0];
-    for(let row of result.data.Rows) {
-        const 
-            startTime = row.StartTime,
-            column = row.Columns[requestedEntity.Index-1],
+		spotPrices = [],
+		unit = result.data.Units[0];
+	for(const row of result.data.Rows) {
+		const 
+			startTime = row.StartTime,
+			column = row.Columns[requestedEntity.Index-1],
 			generatedRow = {
 				startTime: startTime,
 				areaCode: column.Name,
 				spotPrice: column.Value,
 				unit: unit
 			};
-        spotPrices.push(generatedRow);
-    }
+		spotPrices.push(generatedRow);
+	}
 
-    // Yay!
-    return spotPrices;
-};
+	// Yay!
+	return spotPrices;
+}
 
 spotprice.spotprice = spotprice;
 
