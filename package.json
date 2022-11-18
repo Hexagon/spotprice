@@ -1,6 +1,6 @@
 {
   "name": "spotprice",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nordpool spot price in Node, Deno and Bun.",
   "author": "Hexagon <github.com/hexagon>",
   "homepage": "https://hexagon.github.io/spotprice",
@@ -51,10 +51,12 @@
     }
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "c8": "^7.10.0",
     "eslint": "^8.2.0",
     "jsdoc": "^3.6.7",
     "jsdoc-chameleon-template": "^1.0.2",
+    "minitz": "^4.0.3",
     "rollup": "^3.3.0",
     "typescript": "^4.4.4",
     "uglify-js": "^3.14.3",

@@ -193,7 +193,7 @@
       </svg>
     </a>
     <h4 class="name" id="spotprice">
-      <span class="type-signature">(async) </span>.spotprice<span class="signature">(period, requestedArea, currency, currency, endDate, urlOvverride<span class="signature-attributes">opt</span>, resultOverride<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#SpotPriceEntry">SpotPriceEntry</a>>}</span>
+      <span class="type-signature">(async) </span>.spotprice<span class="signature">(period, requestedArea, currency, endDate, urlOvverride<span class="signature-attributes">opt</span>, resultOverride<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#SpotPriceEntry">SpotPriceEntry</a>>}</span>
     </h4>
   </span>
 
@@ -302,38 +302,10 @@
       
       <div>
           
-               <code>currency</code>
-               <em>(
-    <span class="param-type">
-      string
-    </span>
-
-    
-)</em>
-          
-
-          
-            <span class="attributes">
-              
-
-              
-
-              
-            </span>
-          
-
-          <p>SEK, EUR, ... Throws if not supplied by service</p>
-
-          
-
-      </div>
-      
-      <div>
-          
                <code>endDate</code>
                <em>(
     <span class="param-type">
-      string
+      Date
     </span>
 
     
@@ -350,7 +322,7 @@
             </span>
           
 
-          <p>String representing date in format YYYY-MM-DD, expected timezone is Europe/Oslo</p>
+          <p>Date object representing the date to fetch, normal date object in system local time</p>
 
           
 
@@ -453,7 +425,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line78">line 78</a>
+          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line80">line 80</a>
         </li>
       </ul>
     </dd>
@@ -520,6 +492,26 @@
       <div>
           
                <code>startTime</code>
+               <em>(
+    <span class="param-type">
+      Date
+    </span>
+
+    
+)</em>
+          
+
+          
+
+          
+
+          
+
+      </div>
+      
+      <div>
+          
+               <code>endTime</code>
                <em>(
     <span class="param-type">
       Date
@@ -634,7 +626,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line33">line 33</a>
+          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line35">line 35</a>
         </li>
       </ul>
     </dd>
@@ -721,7 +713,7 @@
     <dd class="tag-source">
       <ul class="dummy">
         <li>
-          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line29">line 29</a>
+          <a href="spotprice.js.html">spotprice.js</a>, <a href="spotprice.js.html#line31">line 31</a>
         </li>
       </ul>
     </dd>

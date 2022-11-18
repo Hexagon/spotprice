@@ -8,14 +8,13 @@ export type SpotPriceEntry = any;
  * @param {SpotPricePeriod} period - Requested period
  * @param {string} requestedArea - SE1, SE2, ...
  * @param {string} currency - SEK, EUR, ... Throws if not supplied by service
- * @param {string} currency - SEK, EUR, ... Throws if not supplied by service
- * @param {string} endDate - String representing date in format YYYY-MM-DD, expected timezone is Europe/Oslo
+ * @param {Date} endDate - Date object representing the date to fetch, normal date object in system local time
  * @param {string} [urlOvverride] - Override default service URL, this URL is expected to contain all parameters, and will ignore previus passed parameters
  * @param {Object} [resultOverride] - Override fetch result with plain object
  *
  * @returns {SpotPriceEntry[]} - Result set
  */
-export function spotprice(period: SpotPricePeriod, requestedArea: string, currency: string, endDate: string, urlOverride: any, resultOverride?: any): SpotPriceEntry[];
+export function spotprice(period: SpotPricePeriod, requestedArea: string, currency: string, endDate: Date, urlOverride: any, resultOverride?: any): SpotPriceEntry[];
 export namespace spotprice {
     export { spotprice };
 }

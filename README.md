@@ -59,7 +59,7 @@ import spotprice from "spotprice";
 JavaScript
 
 ```javascript
-import spotprice from "https://deno.land/x/spotprice@0.0.1/src/spotprice.js";
+import spotprice from "https://deno.land/x/spotprice@0.0.3/dist/spotprice.min.mjs";
 
 // ...
 ```
@@ -67,35 +67,9 @@ import spotprice from "https://deno.land/x/spotprice@0.0.1/src/spotprice.js";
 TypeScript
 
 ```typescript
-import { spotprice } from "https://deno.land/x/spotprice@0.0.1/src/spotprice.js";
+import { spotprice } from "https://deno.land/x/spotprice@0.0.3/dist/spotprice.min.mjs";
 
 // ...
-```
-
-### Browser 
-
-#### Manual
-
-*   Download latest [zipball](https://github.com/Hexagon/spotprice/archive/refs/heads/master.zip)
-*   Unpack
-*   Grab ```spotprice.min.js``` (UMD and standalone) or ```spotprice.min.mjs``` (ES-module) from the [dist/](/dist) folder
-
-#### CDN
-
-To use as a [UMD](https://github.com/umdjs/umd)-module (stand alone, [RequireJS](https://requirejs.org/) etc.)
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/spotprice@0.0.1/dist/spotprice.min.js"></script>
-```
-
-To use as an [ES-module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-
-```html
-<script type="module">
-	import spotprice from "https://cdn.jsdelivr.net/npm/spotprice@0.0.1/dist/spotprice.min.mjs";
-
-	// ... see usage section ...
-</script>
 ```
 
 ## Documentation

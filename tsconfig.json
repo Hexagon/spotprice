@@ -1,10 +1,12 @@
 {
     "include": ["src/**/*"],
+    "ignore": ["node_module/**/*"],
     "compilerOptions": {
       "allowJs": true,
       "declaration": true,
       "emitDeclarationOnly": true,
       "esModuleInterop": true,
-      "outDir": "types"
+      "outDir": "types",
+      "skipLibCheck": true
     }
   }

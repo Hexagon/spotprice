@@ -150,6 +150,8 @@
 
   ------------------------------------------------------------------------------------  */
 
+import { minitz } from "minitz";
+
 /**
  * @typedef {"hourly" | "daily" | "weekly" | "monthly" | "yearly"} SpotPricePeriod
  */
@@ -157,6 +159,7 @@
 /**
  * @typedef {Object} SpotPriceEntry
  * @param {Date} startTime
+ * @param {Date} endTime
  * @param {string} areaCode - SE1, SE2 ...
  * @param {Number} spotPrice
  * @param {string} unit - EUR/MWh, SEK/MWh ...
@@ -192,14 +195,19 @@ const
  * @param {SpotPricePeriod} period - Requested period
  * @param {string} requestedArea - SE1, SE2, ...
  * @param {string} currency - SEK, EUR, ... Throws if not supplied by service
- * @param {string} currency - SEK, EUR, ... Throws if not supplied by service
- * @param {string} endDate - String representing date in format YYYY-MM-DD, expected timezone is Europe/Oslo
+ * @param {Date} endDate - Date object representing the date to fetch, normal date object in system local time
  * @param {string} [urlOvverride] - Override default service URL, this URL is expected to contain all parameters, and will ignore previus passed parameters
  * @param {Object} [resultOverride] - Override fetch result with plain object
  * 
  * @returns {SpotPriceEntry[]} - Result set
  */
 async function spotprice(period, requestedArea, currency, endDate, urlOverride, resultOverride) {
+
+	// Convert endDate to correct time zone, target service expects Europe/Olso time
+	// Then format it as DD-MM-YYYY as expected by the service
+	const 
+		dOslo = minitz.toTZ(endDate,"Europe/Oslo"),
+		formattedEndDateOslo = `${dOslo.d.toString().padStart(2,"0")}-${dOslo.m.toString().padStart(2,"0")}-${dOslo.y}`;
 
 	// Construct url
 	let url;
@@ -210,7 +218,7 @@ async function spotprice(period, requestedArea, currency, endDate, urlOverride, 
 		// Construct URL with parameters for currency and endDate
 		const params = new URLSearchParams();
 		if (currency) params.append("currency",currency.trim().toUpperCase());
-		if (endDate) params.append("endDate",endDate);
+		if (endDate) params.append("endDate",formattedEndDateOslo);
 
 		// Find periodId from period
 		const periodId = periods[period];
@@ -244,13 +252,16 @@ async function spotprice(period, requestedArea, currency, endDate, urlOverride, 
 		spotPrices = [],
 		unit = result.data.Units[0];
 	for(const row of result.data.Rows) {
+		if (row.IsExtraRow) continue;
 		const 
 			startTime = row.StartTime,
+			endTime = row.EndTime,
 			column = row.Columns[requestedEntity.Index-1],
 			generatedRow = {
-				startTime: startTime,
+				startTime: minitz.fromTZISO(startTime, "Europe/Oslo"),
+				endTime: minitz.fromTZISO(endTime, "Europe/Oslo"),
 				areaCode: column.Name,
-				spotPrice: column.Value,
+				spotPrice: parseFloat(column.Value.replace(" ","").replace(",",".")),
 				unit: unit
 			};
 		spotPrices.push(generatedRow);
