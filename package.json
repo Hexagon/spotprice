@@ -1,6 +1,6 @@
 {
   "name": "spotprice",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Nordpool spot price in Node, Deno and Bun.",
   "author": "Hexagon <github.com/hexagon>",
   "homepage": "https://hexagon.github.io/spotprice",
