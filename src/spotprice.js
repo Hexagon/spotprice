@@ -72,12 +72,13 @@ const
  * @param {string} requestedArea - SE1, SE2, ...
  * @param {string} currency - SEK, EUR, ... Throws if not supplied by service
  * @param {Date} endDate - Date object representing the date to fetch, normal date object in system local time
+ * @param {Object} fetchOptions - Options passed along to fetch
  * @param {string} [urlOvverride] - Override default service URL, this URL is expected to contain all parameters, and will ignore previus passed parameters
  * @param {Object} [resultOverride] - Override fetch result with plain object
  * 
  * @returns {SpotPriceEntry[]} - Result set
  */
-async function spotprice(period, requestedArea, currency, endDate, urlOverride, resultOverride) {
+async function spotprice(period, requestedArea, currency, endDate, fetchOptions, urlOverride, resultOverride) {
 
 	// Convert endDate to correct time zone, target service expects Europe/Olso time
 	// Then format it as DD-MM-YYYY as expected by the service
@@ -109,7 +110,7 @@ async function spotprice(period, requestedArea, currency, endDate, urlOverride, 
 	let result = resultOverride;
 	if(!resultOverride) {
 		const 
-			fetcher = await fetch(url);
+			fetcher = await fetch(url, fetchOptions);
 		result = await fetcher.json();
 	}
 
