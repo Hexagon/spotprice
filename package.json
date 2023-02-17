@@ -54,7 +54,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "c8": "^7.10.0",
     "eslint": "^8.2.0",
-    "jsdoc": "^3.6.7",
+    "jsdoc": "^4.0.1",
     "jsdoc-chameleon-template": "^1.0.2",
     "minitz": "^4.0.3",
     "rollup": "^3.3.0",
